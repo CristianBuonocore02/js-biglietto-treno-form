@@ -11,23 +11,50 @@
 // va applicato uno sconto del 40% per gli over 65.
 
 
-let km = Number(prompt("km da percorrere"))
-let età = Number(prompt("età passegero"))
+// let km = Number(prompt("km da percorrere"))
+// let età = Number(prompt("età passegero"))
 
 
-let prezzo = km * 0.21
-
-if (età < 18) {
-    prezzo = prezzo * 0.8
-
-} else if (età > 65) {
-    prezzo = prezzo * 0.6
-}
-
-console.log(prezzo + "€");
 
 // MILESTONE 1:
 // Iniziamo implementando il programma senza alcuna estetica: usando esclusivamente due input e un bottone (non stilizzati), realizziamo le specifiche scritte sopra. La risposta finale (o output) sarà anch’essa da scrivere in console.
+
+const kmEl = document.getElementById("chilometri")
+console.log(kmEl);
+
+const anniEl = document.getElementById("anni")
+console.log(anniEl);
+
+const buttonEl = document.getElementById("submit")
+console.log(buttonEl);
+
+const risultatoEl = document.getElementById("result")
+
+
+buttonEl.addEventListener("click", function () {
+    console.log("cliccato");
+
+    const km = kmEl.value
+    console.log(km);
+
+    const eta = anniEl.value
+    console.log(eta);
+
+
+    let prezzo = km * 0.21
+
+    if (eta < 18) {
+        prezzo = prezzo * 0.8
+
+    } else if (eta > 65) {
+        prezzo = prezzo * 0.6
+    }
+
+    console.log(prezzo + "€");
+
+    risultatoEl.innerHTML = prezzo + " €"
+})
+
 
 
 // MILESTONE 2:
